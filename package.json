@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "youtube-dl": "^1.11.1"
+  }
+}
