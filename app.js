@@ -6,7 +6,6 @@ if (!myType || myType.length === 0 || !myId || myId.length === 0) {
   process.exit(1);
 }
 
-
 var http = require("http");
 var path = require('path');
 var fs   = require('fs');
@@ -23,7 +22,7 @@ function singleSong(singleId) {
    size = info.size;
     name = info._filename;
     var output = path.join(__dirname + '/', name + '.mp4');
-    video.pipe(fs.createWriteStream(output));
+    res.pipe(fs.createWriteStream(output));
   });
   
 }

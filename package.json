@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "youtube-dl": "^1.11.1"
   }
 }
