@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
 
-// var bodyParser = require('body-parser');
-// var http = require("http");
-// var path = require('path');
-// var fs   = require('fs');
-// var ytdl = require('youtube-dl');
+var bodyParser = require('body-parser');
+var http = require("http");
+var path = require('path');
+var fs   = require('fs');
+var ytdl = require('youtube-dl');
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
