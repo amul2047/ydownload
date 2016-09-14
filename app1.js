@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-//var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var http = require("http");
 var path = require('path');
 var fs   = require('fs');
