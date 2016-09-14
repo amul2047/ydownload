@@ -54,72 +54,72 @@ app.listen(port, function() {
 //   }
 
 // });
-function singleSong(singleId) {
+// function singleSong(singleId) {
 
-  var video = ytdl('http://www.youtube.com/watch?v='+singleId);
+//   var video = ytdl('http://www.youtube.com/watch?v='+singleId);
   
-  // Will be called when the download starts. 
-  video.on('info', function(info) {
-    console.log('Download started');
-   size = info.size;
-    name = info._filename;
-    var output = path.join(__dirname + '/files/video/', name);
-    video.pipe(fs.createWriteStream(output));
-  });
+//   // Will be called when the download starts. 
+//   video.on('info', function(info) {
+//     console.log('Download started');
+//    size = info.size;
+//     name = info._filename;
+//     var output = path.join(__dirname + '/files/video/', name);
+//     video.pipe(fs.createWriteStream(output));
+//   });
   
-}
+// }
 
-function playlist(url) {
+// function playlist(url) {
  
-  'use strict';
-  var video = ytdl(url);
+//   'use strict';
+//   var video = ytdl(url);
  
-  video.on('error', function error(err) {
-    console.log('error 2:', err);
-  });
+//   video.on('error', function error(err) {
+//     console.log('error 2:', err);
+//   });
  
-  var size = 0;
-  var name = 0;
-  video.on('info', function(info) {
-  console.log('Download started');
-    size = info.size;
-    name = info._filename;
-    var output = path.join(__dirname + '/', name + '.mp4');
-    video.pipe(fs.createWriteStream(output));
-  });
+//   var size = 0;
+//   var name = 0;
+//   video.on('info', function(info) {
+//   console.log('Download started');
+//     size = info.size;
+//     name = info._filename;
+//     var output = path.join(__dirname + '/', name + '.mp4');
+//     video.pipe(fs.createWriteStream(output));
+//   });
  
-  var pos = 0;
-  video.on('data', function data(chunk) {
-    pos += chunk.length;
-    // `size` should not be 0 here. 
-    if (size) {
-      var percent = (pos / size * 100).toFixed(2);
-      process.stdout.cursorTo(0);
-      process.stdout.clearLine(1);
-      process.stdout.write(percent + '%');
-    }
-  });
-  video.on('next', playlist);
-}
-function downloadMP3(url) {
+//   var pos = 0;
+//   video.on('data', function data(chunk) {
+//     pos += chunk.length;
+//     // `size` should not be 0 here. 
+//     if (size) {
+//       var percent = (pos / size * 100).toFixed(2);
+//       process.stdout.cursorTo(0);
+//       process.stdout.clearLine(1);
+//       process.stdout.write(percent + '%');
+//     }
+//   });
+//   video.on('next', playlist);
+// }
+// function downloadMP3(url) {
   
-  var url = 'https://www.youtube.com/watch?v=H7HmzwI67ec';
+//   var url = 'https://www.youtube.com/watch?v=H7HmzwI67ec';
 
-ytdl.exec(url, ['-x', '--audio-format', 'mp3'], {}, function exec(err, output) {
-  'use strict';
-  if (err) { throw err; }
-  console.log(output.join('\n'));
-});
+// ytdl.exec(url, ['-x', '--audio-format', 'mp3'], {}, function exec(err, output) {
+//   'use strict';
+//   if (err) { throw err; }
+//   console.log(output.join('\n'));
+// });
 
-}
+// }
 
-function getIDfromURL(url)
-{
-	var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-	var match = url.match(regExp);
-	if (match && match[2].length == 11) {
-	  return match[2];
-	} else {
-	  console.log("Wrong ID");
-	}
-}
+// function getIDfromURL(url)
+// {
+// 	var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+// 	var match = url.match(regExp);
+// 	if (match && match[2].length == 11) {
+// 	  return match[2];
+// 	} else {
+// 	  console.log("Wrong ID");
+// 	}
+// }
