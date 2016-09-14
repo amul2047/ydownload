@@ -28,32 +28,32 @@ app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
 });
 
-app.post('/', function(req, res) {
-  //res.send('You sent the name "' + req.body.link + '".');
-  var link = req.body.link;
-  var listType = req.body.listType;
-  var format = req.body.format;
+// app.post('/', function(req, res) {
+//   //res.send('You sent the name "' + req.body.link + '".');
+//   var link = req.body.link;
+//   var listType = req.body.listType;
+//   var format = req.body.format;
 
-  //parse url to get video ID
-  var yId = getIDfromURL(link);
+//   //parse url to get video ID
+//   var yId = getIDfromURL(link);
 
-  if(listType="single" && format=="video")
-  {
-  	singleSong(yId);
-  }else if(listType="list" && format=="video")
-  {
-  	playlist(link);
-  }else if(listType="single" && format=="audio")
-  {
-  	downloadMP3(link);
-  }else if(listType="list" && format=="audio")
-  {
-  	console.log("Functionality in progress");
-  }else{
-  	console.log("Nothing to do here");
-  }
+//   if(listType="single" && format=="video")
+//   {
+//   	singleSong(yId);
+//   }else if(listType="list" && format=="video")
+//   {
+//   	playlist(link);
+//   }else if(listType="single" && format=="audio")
+//   {
+//   	downloadMP3(link);
+//   }else if(listType="list" && format=="audio")
+//   {
+//   	console.log("Functionality in progress");
+//   }else{
+//   	console.log("Nothing to do here");
+//   }
 
-});
+// });
 function singleSong(singleId) {
 
   var video = ytdl('http://www.youtube.com/watch?v='+singleId);
